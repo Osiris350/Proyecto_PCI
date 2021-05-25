@@ -1,17 +1,17 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Tue May 25 01:01:30 2021
+[*] Tue May 25 14:03:05 2021
 [*]
 [dumpfile] "/home/gabriel/Documents/Digitales2/Proyecto/Proyecto_PCI-main/Prueba_1.vcd"
-[dumpfile_mtime] "Tue May 25 00:52:30 2021"
-[dumpfile_size] 10943
-[savefile] "/home/gabriel/Documents/Digitales2/Proyecto/Proyecto_PCI-main/MUXES.gtkw"
+[dumpfile_mtime] "Tue May 25 13:39:55 2021"
+[dumpfile_size] 10759
+[savefile] "/home/gabriel/Documents/Digitales2/Proyecto/Proyecto_PCI-main/gtks/MUXES.gtkw"
 [timestart] 0
 [size] 1000 600
-[pos] 279 94
+[pos] -1 -1
 *-4.112333 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [sst_width] 233
-[signals_width] 151
+[signals_width] 134
 [sst_expanded] 1
 [sst_vpaned_height] 144
 @28
@@ -22,7 +22,7 @@ BancoPrueba_1.clk_2
 [color] 3
 BancoPrueba_1.clk_3
 @200
--Entradas
+-Inputs
 @22
 [color] 4
 BancoPrueba_1.dataIn0[7:0]
@@ -30,10 +30,10 @@ BancoPrueba_1.dataIn0[7:0]
 [color] 4
 BancoPrueba_1.validIn0
 @22
-[color] 7
+[color] 6
 BancoPrueba_1.dataIn1[7:0]
 @28
-[color] 7
+[color] 6
 BancoPrueba_1.validIn1
 @22
 [color] 1
@@ -48,26 +48,26 @@ BancoPrueba_1.dataIn3[7:0]
 [color] 3
 BancoPrueba_1.validIn3
 @200
--L1
+-MuxL1
 @22
-[color] 2
+[color] 5
 BancoPrueba_1.dataOut0[7:0]
 @28
-[color] 2
+[color] 5
 BancoPrueba_1.validOut0
 @22
-[color] 5
+[color] 7
 BancoPrueba_1.dataOut1[7:0]
 @28
-[color] 5
+[color] 7
 BancoPrueba_1.validOut1
 @200
--L2
+-MuxL2
 @22
-[color] 7
+[color] 2
 BancoPrueba_1.dataOut2[7:0]
 @28
-[color] 7
+[color] 2
 BancoPrueba_1.validOut2
 [pattern_trace] 1
 [pattern_trace] 0
