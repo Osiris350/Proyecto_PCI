@@ -27,7 +27,7 @@ module Recirculador(
 	output reg validOut7
 	);
 
-	always@(*)
+	always@(posedge clk)
 		begin
 			if(selector_IDLE == 0)
 				begin
