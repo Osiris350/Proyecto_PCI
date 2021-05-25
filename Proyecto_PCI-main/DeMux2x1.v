@@ -19,6 +19,10 @@ module DeMux2x1(
     //Mux de entrada el que escoge entre dataIn1 y dataIn0 a partir del selector
     always @(*)
         begin
+            out0 = dataOut0;
+            out1 = dataOut1;
+            validDeMux0 = validOut0;
+            validDeMux1 = validOut1;
             if(selector == 1) begin
                 out1 = dataIn;
                 validDeMux1 = validIn;
@@ -33,31 +37,21 @@ module DeMux2x1(
         begin
             if (reset == 0)begin
                 dataOut0 <= 8'b00000000;
-                dataOut1 <= 8'b00000000;
             end
             else begin
                 if (validDeMux0 == 1)begin
                     dataOut0 <= out0;
                     validOut0 <= validDeMux0;
                     end
-                else if (validDeMux0 == 0) begin
+                else if (validDeMux0 == 0)begin
                     dataOut0 <= dataOut0; 
                     validOut0 <= validDeMux0;   
-                end
-                if (validDeMux1 == 1)begin
-                    dataOut1 <= out1;
-                    validOut1 <= validDeMux1;
-                    end
-                else if (validDeMux1 == 0) begin
-                    dataOut1 <= dataOut1; 
-                    validOut1 <= validDeMux1;   
                 end
             end
         end
     always @(posedge clk) 
         begin
             if (reset == 0)begin
-                    dataOut0 <= 8'b00000000;
                     dataOut1 <= 8'b00000000;
                 end
             else begin

@@ -1,9 +1,10 @@
-`timescale 	1ns	/ 1ns
+`timescale 	100ns	/ 1ns
 
-`include "MuxL1.v"
-`include "MuxL2.v"
-`include "DeMuxL1.v"
-`include "DeMuxL2.v"
+`include "cmos_cells.v"
+`include "mux_L1_synth.v"
+`include "mux_L2_synth.v"
+`include "demux_L1_synth.v"
+`include "demux_L2_synth.v"
 `include "probador_1.v"
 
 module BancoPrueba_1;
@@ -14,7 +15,7 @@ module BancoPrueba_1;
 	wire clk_1, clk_2, clk_3,reset;
 	wire selector0, selector1;
 
-	MuxL1	L1( /*AUTOINST*/
+	mux_L1_synth	L1( /*AUTOINST*/
 				   // Outputs
 				   .dataOut0		(dataOut0[7:0]),
 				   .dataOut1		(dataOut1[7:0]),
@@ -33,7 +34,7 @@ module BancoPrueba_1;
 				   .clk			(clk_2),
 				   .reset		(reset));
 
-	MuxL2 			L2( /*AUTOINST*/
+	mux_L2_synth 			L2( /*AUTOINST*/
 				   // Outputs
 				   .dataOut		(dataOut2[7:0]),
 				   .validOut		(validOut2),
@@ -46,7 +47,7 @@ module BancoPrueba_1;
 				   .clk			(clk_1),
 				   .reset		(reset));
 	
-	DeMuxL2 		DeL2( /*AUTOINST*/
+	demux_L2_synth 		DeL2( /*AUTOINST*/
 				   // Outputs
 				   .dataOut0		(dataOut3[7:0]),
 				   .dataOut1		(dataOut4[7:0]),
@@ -56,10 +57,10 @@ module BancoPrueba_1;
 				   .dataIn		    (dataOut2[7:0]),
 				   .validIn		    (validOut2),
 				   .selector		(selector1),
-				   .clk			    (clk_1),
+				   .clk			    (clk_2),
 				   .reset		    (reset));
 
-	DeMuxL1			DeL1( /*AUTOINST*/
+	demux_L1_synth			DeL1( /*AUTOINST*/
 				   // Outputs
 				   .dataOut0		(dataOut5[7:0]),
 				   .dataOut1		(dataOut6[7:0]),
@@ -75,7 +76,7 @@ module BancoPrueba_1;
 				   .validIn0		(validOut3),
 				   .validIn1		(validOut4),
 				   .selector		(selector0),
-				   .clk				(clk_2),
+				   .clk				(clk_3),
 				   .reset			(reset));
 
 	probador_1 			probador( /*AUTOINST*/

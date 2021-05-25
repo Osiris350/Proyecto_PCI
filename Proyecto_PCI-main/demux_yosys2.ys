@@ -1,0 +1,8 @@
+read_verilog DeMuxL2.v 
+hierarchy -check -top DeMuxL2
+proc; opt; fsm; opt; memory; opt;
+techmap; opt
+dfflibmap -liberty cmos_cells.lib
+abc -liberty cmos_cells.lib
+clean
+write_verilog demux_L2_synth.v
