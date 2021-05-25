@@ -1,10 +1,11 @@
 /** 
-* Se incluye el contenido de los archivos Recirculador.v 
+* Se incluye el contenido de los archivos Recirculador_sintetizado.v 
 * y Probador_Probador.v, los cuales contienen el modulo recirculador 
 * y su probador
 **/
-`include "Recirculador.v"
+`include "Recirculador_sintetizado.v"
 `include "Probador_Recirculador.v"
+`include "cmos_cells.v"
 
 /**
 * Modulo testbench para el recirculador diseñado
@@ -13,7 +14,7 @@ module Testbench();
 
 	/** 
 	* Se declaran los wires que van a conectar cada una de las entradas
-	* y salidas entre el modulo Recirculador y su probador
+	* y salidas entre el modulo Recirculador_sintetizado y su probador
 	**/
 	wire clk;
 	wire [7:0]dataIn0;
@@ -43,11 +44,11 @@ module Testbench();
 	wire validOut7;
 
 	/** 
-	* Se instancian los modulos del Recirculador y su probador,
+	* Se instancian los modulos del Recirculador_sintetizado y su probador,
 	* y se conectan sus entradas y salidas a los correspondientes wires
 	**/
 
-	Recirculador recirculador(/*AUTOINST*/
+	Recirculador_sintetizado recirculador(/*AUTOINST*/
                                   // Outputs
                                   .dataOut0             (dataOut0[7:0]),
                                   .dataOut1             (dataOut1[7:0]),
