@@ -102,7 +102,7 @@ module probador_1(
         @(posedge clk_3);
             dataIn0 <= 8'b00000000;
             dataIn1 <= 8'b00000000;
-            dataIn2 <= 8'b1110111;
+            dataIn2 <= 8'b1110111; //77
             dataIn3 <= 8'b00000000;
             validIn0 <= 1'b0;
             validIn1 <= 1'b0;
@@ -114,36 +114,24 @@ module probador_1(
             selector0<=1;  
 
         @(posedge clk_1);
-            selector1 <= 1;  
+            selector1 <= 1; 
         @(posedge clk_1);
             selector1 <= 0;
         @(posedge clk_2);
             selector0<=0; 
-        @(posedge clk_2);
-            selector0<=1;
-        @(posedge clk_2);
-            selector0<=0; 
-        @(posedge clk_2);
-            selector0<=1;
+        @(posedge clk_3);
+            dataIn2 <= 8'b00000000;
+            validIn2 <= 0;
         @(posedge clk_2);
             selector0<=0; 
         @(posedge clk_2);
             selector0<=1;
         @(posedge clk_2);
-            selector0<=0; 
-
+            selector0<=0;
         @(posedge clk_2);
             selector0<=1;
         @(posedge clk_2);
-            selector0<=0; 
-
-        @(posedge clk_2);
-            selector0<=1;
-        @(posedge clk_2);
-            selector0<=0; 
-        
-            
-        
+            selector0<=0;
 
         $finish;
     end

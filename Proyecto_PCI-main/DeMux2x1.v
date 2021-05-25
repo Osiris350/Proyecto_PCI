@@ -13,6 +13,7 @@ module DeMux2x1(
     reg [7:0]out1;
     reg validDeMux0;
     reg validDeMux1;
+    
 
 
     //Mux de entrada el que escoge entre dataIn1 y dataIn0 a partir del selector

@@ -1,0 +1,73 @@
+[*]
+[*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
+[*] Tue May 25 01:06:48 2021
+[*]
+[dumpfile] "/home/gabriel/Documents/Digitales2/Proyecto/Proyecto_PCI-main/Prueba_1.vcd"
+[dumpfile_mtime] "Tue May 25 00:52:30 2021"
+[dumpfile_size] 10943
+[savefile] "/home/gabriel/Documents/Digitales2/Proyecto/Proyecto_PCI-main/DEMUXES.gtkw"
+[timestart] 0
+[size] 1043 600
+[pos] 291 24
+*-4.041512 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 233
+[signals_width] 152
+[sst_expanded] 1
+[sst_vpaned_height] 144
+@28
+[color] 1
+BancoPrueba_1.clk_1
+[color] 2
+BancoPrueba_1.clk_2
+[color] 3
+BancoPrueba_1.clk_3
+@201
+-Input Demux
+@22
+[color] 4
+BancoPrueba_1.dataOut2[7:0]
+@28
+[color] 4
+BancoPrueba_1.validOut2
+@200
+-L2
+@22
+[color] 6
+BancoPrueba_1.dataOut3[7:0]
+@28
+[color] 6
+BancoPrueba_1.validOut3
+@22
+[color] 7
+BancoPrueba_1.dataOut4[7:0]
+@28
+[color] 7
+BancoPrueba_1.validOut4
+@200
+-L1
+@22
+[color] 3
+BancoPrueba_1.dataOut5[7:0]
+@28
+[color] 3
+BancoPrueba_1.validOut5
+@22
+[color] 4
+BancoPrueba_1.dataOut6[7:0]
+@28
+[color] 4
+BancoPrueba_1.validOut6
+@22
+[color] 2
+BancoPrueba_1.dataOut7[7:0]
+@28
+[color] 2
+BancoPrueba_1.validOut7
+@22
+[color] 1
+BancoPrueba_1.dataOut8[7:0]
+@28
+[color] 1
+BancoPrueba_1.validOut8
+[pattern_trace] 1
+[pattern_trace] 0
