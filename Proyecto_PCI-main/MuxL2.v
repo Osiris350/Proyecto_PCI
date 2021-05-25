@@ -1,4 +1,4 @@
-//`include "Mux2x1.v"
+`include "Mux2x1.v"
 
 module MuxL2(
     output [7:0]dataOut,

@@ -19,6 +19,10 @@ module DeMux2x1(
     //Mux de entrada el que escoge entre dataIn1 y dataIn0 a partir del selector
     always @(*)
         begin
+        out1 = 7'b0;
+        out0 = 7'b0;
+    	validDeMux0 = 0;
+    	validDeMux1 = 0;
             if(selector == 1) begin
                 out1 = dataIn;
                 validDeMux1 = validIn;
