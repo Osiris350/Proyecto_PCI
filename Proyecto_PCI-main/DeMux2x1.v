@@ -44,6 +44,14 @@ module DeMux2x1(
                     dataOut0 <= dataOut0; 
                     validOut0 <= validDeMux0;   
                 end
+                if (validDeMux1 == 1)begin
+                    dataOut1 <= out1;
+                    validOut1 <= validDeMux1;
+                    end
+                else if (validDeMux1 == 0) begin
+                    dataOut1 <= dataOut1; 
+                    validOut1 <= validDeMux1;   
+                end
             end
         end
     always @(posedge clk) 
@@ -64,3 +72,4 @@ module DeMux2x1(
             end
         end
 endmodule
+
