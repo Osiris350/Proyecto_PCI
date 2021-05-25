@@ -42,16 +42,16 @@ module probador_1(
 
         repeat (1) begin
             @(posedge clk_3);
-                reset <= 1;
+                reset <= 0;
         end 
 
-        @(posedge clk_2);
-            selector0 <= 1;
-        @(posedge clk_2);
-            selector0 <= 0;
-
         @(posedge clk_1);
-            selector1 <= 1;
+            selector1<=1;
+        @(posedge clk_2);
+            reset <= 1;
+            selector1<=0;
+        @(posedge clk_1);
+            selector1<=1;
 
         @(posedge clk_3);
             dataIn0 <= 8'b11111111;
@@ -62,42 +62,31 @@ module probador_1(
             validIn1 <= 1'b1;
             validIn2 <= 1'b1;
             validIn3 <= 1'b1;
+            selector1<=0;
 
         @(posedge clk_1);
-            selector1 <= 0;
-
+            selector1<=1;
         @(posedge clk_2);
-            selector0 <= 1;
-
+            selector0<=1;
+            selector1<=0;
         @(posedge clk_1);
-            selector1 <= 1;
-        @(posedge clk_1);
-            selector1 <= 0;
-
-        @(posedge clk_2);
-            selector0 <= 0;
-
-        @(posedge clk_1);
-            selector1 <= 1;
+            selector1<=1;
 		
         @(posedge clk_3);
             dataIn0 <= 8'b10111011; //BB
             dataIn1 <= 8'b10101010; //AA
             dataIn2 <= 8'b10011001; //99
             dataIn3 <= 8'b10001000; //88
-
+            selector0<=0;
+            selector1<=0;
+        
         @(posedge clk_1);
-            selector1 <= 0;
+            selector1<=1;
         @(posedge clk_2);
-            selector0 <= 1;
+            selector0<=1;
+            selector1<=0;
         @(posedge clk_1);
-            selector1 <= 1;
-        @(posedge clk_1);
-            selector1 <= 0;
-        @(posedge clk_2);
-            selector0 <= 0;
-        @(posedge clk_1);
-            selector1 <= 1;
+            selector1<=1;
             
         @(posedge clk_3);
             dataIn0 <= 8'b00000000;
@@ -108,37 +97,61 @@ module probador_1(
             validIn1 <= 1'b0;
             validIn2 <= 1'b1;
             validIn3 <= 1'b0;
-        @(posedge clk_1);
-            selector1 <= 0;
-        @(posedge clk_2);
-            selector0<=1;  
+            selector0<=0;
+            selector1<=0;
 
         @(posedge clk_1);
-            selector1 <= 1; 
-        @(posedge clk_1);
-            selector1 <= 0;
+            selector1<=1;
         @(posedge clk_2);
-            selector0<=0; 
+            selector0<=1;
+            selector1<=0;
+        @(posedge clk_1);
+            selector1<=1;
+
         @(posedge clk_3);
             dataIn2 <= 8'b00000000;
             validIn2 <= 0;
-        @(posedge clk_2);
-            selector0<=0; 
+            selector0<=0;
+            selector1<=0;
+        
+        @(posedge clk_1);
+            selector1<=1;
         @(posedge clk_2);
             selector0<=1;
-        @(posedge clk_2);
-            selector0<=0;
-        @(posedge clk_2);
-            selector0<=1;
-        @(posedge clk_2);
-            selector0<=0;
+            selector1<=0;
+        @(posedge clk_1);
+            selector1<=1;
 
+        @(posedge clk_3);
+            selector0<=0;
+            selector1<=0;
+
+        @(posedge clk_1);
+            selector1<=1;
+        @(posedge clk_2);
+            selector0<=1;
+            selector1<=0;
+        @(posedge clk_1);
+            selector1<=1;
+            
+        @(posedge clk_3);
+            selector0<=0;
+            selector1<=0;
+
+        @(posedge clk_1);
+            selector1<=1;
+        @(posedge clk_2);
+            selector0<=1;
+            selector1<=0;
+        @(posedge clk_1);
+            selector1<=1;
+        
         $finish;
     end
 
-    initial	clk_1 	<= 0;
-    initial	clk_2 	<= 0;
-    initial clk_3   <= 0;
+    initial	clk_1 	<= 1;
+    initial	clk_2 	<= 1;
+    initial clk_3   <= 1;
 	always	#1 clk_1 	<= ~clk_1;
     always	#2 clk_2 	<= ~clk_2;
     always	#4 clk_3 	<= ~clk_3;
