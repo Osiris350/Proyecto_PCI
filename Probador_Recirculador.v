@@ -59,15 +59,15 @@ module Probador_Recirculador(
 
 	initial 
 		begin
-			{clk, clk2, selector_IDLE, validIn0, validIn1, validIn2, validIn3} = 0;
-			clk4 = 1;
+			{clk4, clk2, selector_IDLE, validIn0, validIn1, validIn2, validIn3} = 0;
+			clk = 1;
 		end
 
-	always #1 clk4 = ~clk4;
+	always #1 clk = ~clk;
 	
-	always@(posedge clk4) clk2 = ~clk2;
+	always@(posedge clk) clk2 = ~clk2;
 
-	always@(posedge clk2) clk = ~clk;
+	always@(posedge clk2) clk4 = ~clk4;
 
 	/** 
 	* Se dispone de un initial block para estimular todas
@@ -91,6 +91,11 @@ module Probador_Recirculador(
 			dataIn2 = DD;
 			dataIn3 = CC;
 
+			validIn0 = 1;
+			validIn1 = 1;
+			validIn2 = 1;
+			validIn3 = 1;
+
 			#4
 			selector_IDLE = 1;
 
@@ -105,6 +110,14 @@ module Probador_Recirculador(
 			dataIn1 = X;
 			dataIn2 = x77;
 			dataIn3 = X;
+
+			validIn0 = 0;
+			validIn1 = 0;
+			validIn3 = 0;
+
+			#8
+			dataIn2 = X;
+			validIn2 = 0;
 
 			/** 
 			* Se dan 4 unidades de tiempo mas para poder
