@@ -1,4 +1,4 @@
-`include "DeMux2x1.v"
+//`include "DeMux2x1.v"
 module DeMuxL2(
     output [7:0]dataOut0,
     output [7:0]dataOut1,

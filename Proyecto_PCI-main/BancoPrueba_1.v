@@ -56,7 +56,7 @@ module BancoPrueba_1;
 				   .dataIn		    (dataOut2[7:0]),
 				   .validIn		    (validOut2),
 				   .selector		(selector1),
-				   .clk			    (clk_2),
+				   .clk			    (clk_1),
 				   .reset		    (reset));
 
 	DeMuxL1			DeL1( /*AUTOINST*/
@@ -75,7 +75,7 @@ module BancoPrueba_1;
 				   .validIn0		(validOut3),
 				   .validIn1		(validOut4),
 				   .selector		(selector0),
-				   .clk				(clk_3),
+				   .clk				(clk_2),
 				   .reset			(reset));
 
 	probador_1 			probador( /*AUTOINST*/
