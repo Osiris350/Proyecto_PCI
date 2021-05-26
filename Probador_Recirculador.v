@@ -63,7 +63,7 @@ module Probador_Recirculador(
 			clk = 1;
 		end
 
-	always #1 clk = ~clk;
+	always #2 clk = ~clk;
 	
 	always@(posedge clk) clk2 = ~clk2;
 
