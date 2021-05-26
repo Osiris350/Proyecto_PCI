@@ -1,4 +1,4 @@
-`timescale 	100ns	/ 1ns
+`timescale 	1ns	/ 1ns
 
 `include "MuxL1.v"
 `include "MuxL2.v"

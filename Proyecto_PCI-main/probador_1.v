@@ -149,7 +149,7 @@ module probador_1(
         $finish;
     end
 
-    initial	clk_1 	<= 1;
+    initial	clk_1 	<= 2;
     initial	clk_2 	<= 1;
     initial clk_3   <= 1;
 	always	#1 clk_1 	<= ~clk_1;
