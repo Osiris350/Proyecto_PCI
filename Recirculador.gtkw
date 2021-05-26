@@ -1,0 +1,113 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Wed May 26 01:18:51 2021
+[*]
+[dumpfile] "C:\Users\jafet_000\Desktop\Recirculador.vcd"
+[savefile] "C:\Users\jafet_000\Desktop\Recirculador.gtkw"
+[timestart] 0
+[size] 1366 705
+[pos] -87 -87
+*-3.203590 30 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] Testbench.
+[sst_width] 197
+[signals_width] 182
+[sst_expanded] 1
+[sst_vpaned_height] 190
+@28
+[color] 1
+Testbench.clk
+[color] 2
+Testbench.signals_generator_synth.clk_2
+[color] 3
+Testbench.signals_generator_synth.clk_3
+@22
+[color] 5
+Testbench.dataIn0[7:0]
+[color] 7
+Testbench.dataIn1[7:0]
+[color] 1
+Testbench.dataIn2[7:0]
+@23
+[color] 2
+Testbench.dataIn3[7:0]
+@28
+[color] 5
+Testbench.validIn0
+[color] 7
+Testbench.validIn1
+[color] 1
+Testbench.validIn2
+[color] 2
+Testbench.validIn3
+[color] 3
+Testbench.selector_IDLE
+@22
+[color] 5
+Testbench.dataOut0_cond[7:0]
+[color] 5
+Testbench.dataOut0_synth[7:0]
+[color] 7
+Testbench.dataOut1_cond[7:0]
+[color] 7
+Testbench.dataOut1_synth[7:0]
+[color] 1
+Testbench.dataOut2_cond[7:0]
+[color] 1
+Testbench.dataOut2_synth[7:0]
+[color] 2
+Testbench.dataOut3_cond[7:0]
+[color] 2
+Testbench.dataOut3_synth[7:0]
+@28
+[color] 5
+Testbench.validOut0_cond
+[color] 5
+Testbench.validOut0_synth
+[color] 7
+Testbench.validOut1_cond
+[color] 7
+Testbench.validOut1_synth
+[color] 1
+Testbench.validOut2_cond
+[color] 1
+Testbench.validOut2_synth
+[color] 2
+Testbench.validOut3_cond
+[color] 2
+Testbench.validOut3_synth
+@22
+[color] 5
+Testbench.dataOut4_cond[7:0]
+[color] 5
+Testbench.dataOut4_synth[7:0]
+[color] 7
+Testbench.dataOut5_cond[7:0]
+[color] 7
+Testbench.dataOut5_synth[7:0]
+[color] 1
+Testbench.dataOut6_cond[7:0]
+[color] 1
+Testbench.dataOut6_synth[7:0]
+[color] 2
+Testbench.dataOut7_cond[7:0]
+[color] 2
+Testbench.dataOut7_synth[7:0]
+@28
+[color] 5
+Testbench.validOut4_cond
+[color] 5
+Testbench.validOut4_synth
+[color] 7
+Testbench.validOut5_cond
+[color] 7
+Testbench.validOut5_synth
+[color] 1
+Testbench.validOut6_cond
+[color] 1
+Testbench.validOut6_synth
+[color] 2
+Testbench.validOut7_cond
+[color] 2
+Testbench.validOut7_synth
+[pattern_trace] 1
+[pattern_trace] 0
