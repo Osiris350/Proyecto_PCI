@@ -12,7 +12,7 @@
 **/
 
 module Probador_Recirculador(
-	output reg clk,
+	output reg clk_1,
 	output reg [7:0]dataIn0,
 	output reg[ 7:0]dataIn1,
 	output reg [7:0]dataIn2,
@@ -40,7 +40,7 @@ module Probador_Recirculador(
 	input validOut7
 	);
 
-	reg clk4, clk2;
+	reg clk_2, clk_3;
 	/**
 	* Los siguientes parameters serviran como entradas
 	* de prueba para el recirculador
@@ -59,15 +59,15 @@ module Probador_Recirculador(
 
 	initial 
 		begin
-			{clk4, clk2, selector_IDLE, validIn0, validIn1, validIn2, validIn3} = 0;
-			clk = 1;
+			{clk_3, clk_2, selector_IDLE, validIn0, validIn1, validIn2, validIn3} = 0;
+			clk_1 = 1;
 		end
 
-	always #2 clk = ~clk;
+	always #2 clk_1 = ~clk_1;
 	
-	always@(posedge clk) clk2 = ~clk2;
+	always@(posedge clk_1) clk_2 = ~clk_2;
 
-	always@(posedge clk2) clk4 = ~clk4;
+	always@(posedge clk_2) clk_3 = ~clk_3;
 
 	/** 
 	* Se dispone de un initial block para estimular todas
