@@ -13,12 +13,13 @@
 
 module Probador_SerialParalelo_Tx(
 	output reg clk_1,
+	output reg clk_2,
 	output reg reset,
-	output reg [7:0] IDLE_in,
+	output reg IDLE_in,
 	input IDLE_out
 	);
 
-	reg clk_2, clk_3;
+	reg clk_3;
 	/**
 	* Los siguientes parameters serviran como entradas
 	* de prueba para el recirculador
@@ -30,14 +31,14 @@ module Probador_SerialParalelo_Tx(
 
 	initial 
 		begin
-			{clk_3, clk_2} = 0;
-			{clk_1, reset} = 1;
-			IDLE_in = X;
+			{clk_3, clk_2, reset} = 0;
+			clk_1 = 1;
+			IDLE_in = 1'bx;
 		end
 
-	always #2 clk_1 = ~clk_1;
+	always #1 clk_1 = ~clk_1;
 	
-	always@(posedge clk_1) clk_2 = ~clk_2;
+	always #4 clk_2 = ~clk_2;
 
 	always@(posedge clk_2) clk_3 = ~clk_3;
 
@@ -57,21 +58,72 @@ module Probador_SerialParalelo_Tx(
 			$dumpfile("SerialParalelo_Tx.vcd");
 			$dumpvars; // Especificacion para que se guarden todas las variables en el archivo .vcd
 
-			#2
+			#5
 			reset = 1;
-			IDLE_in = xBC;
 
-			#16
-			IDLE_in = x7C;
+			repeat(4)
+				begin
+					IDLE_in = 1;
 
-			#8
-			reset = 0;
+					#2
+					IDLE_in = 0;
+
+					#2
+					IDLE_in = 1;
+
+					#2
+					IDLE_in = 1;
+
+					#2
+					IDLE_in = 1;
+
+					#2
+					IDLE_in = 1;
+
+					#2
+					IDLE_in = 0;
+
+					#2
+					IDLE_in = 0;
+
+					#2
+					IDLE_in = 0;
+				end
+
+				repeat(4)
+				begin
+					IDLE_in = 0;
+
+					#2
+					IDLE_in = 1;
+
+					#2
+					IDLE_in = 1;
+
+					#2
+					IDLE_in = 1;
+
+					#2
+					IDLE_in = 1;
+
+					#2
+					IDLE_in = 1;
+
+					#2
+					IDLE_in = 0;
+
+					#2
+					IDLE_in = 0;
+
+					#2
+					IDLE_in = 0;
+				end
 
 			/** 
-			* Se dan 8 unidades de tiempo mas para poder
+			* Se dan 2 unidades de tiempo mas para poder
 			* observar los resultados del ultima cambio
 			* y se termina la simulacion con el keyword finish
 			**/
-			#8 $finish;
+			#2 $finish;
 		end
 endmodule
