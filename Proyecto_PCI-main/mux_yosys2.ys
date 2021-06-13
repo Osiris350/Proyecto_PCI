@@ -1,8 +1,0 @@
-read_verilog MuxL2.v 
-hierarchy -check -top MuxL2
-proc; opt; fsm; opt; memory; opt;
-techmap; opt
-dfflibmap -liberty cmos_cells.lib
-abc -liberty cmos_cells.lib
-clean
-write_verilog mux_L2_synth.v
