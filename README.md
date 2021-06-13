@@ -14,3 +14,7 @@ El objetivo del sistema es precisamente recibir y transmitir la información. Es
 ### Instrucciones para la ejecución del Makefile
 Para ejecutar las distintas pruebas solo es necesario correr el comando $make$ $Prueba\_\#$, donde \# es el resto del nombre de la prueba como se muestra en el $Makefile$. $Prueba\_PHYTX/RX$ ejecuta las pruebas de los módulos $Phy\_Tx.v$ y $Phy\_Rx.v$, mientras que $Prueba\_PHY$ ejecuta la simulación del módulo $Phy.v$. En términos generales cada prueba realiza lo siguiente:
 
+ - Con Yosys se realiza la síntesis de los diseños conductuales y se generan descripciones estructurales genéricas.
+ - Se cambia el nombre de los módulos dentro de los archivos sintetizados con el comando sed.
+ - Con Verilog se compila el archivo de banco de prueba, y se genera su correspondiente archivo .vcd.
+ - Se despliega GTKWave con al archivo .vcd para poder observar las respuestas temporales de los modelos conductuales y estructurales desarrollados.
